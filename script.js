@@ -1,7 +1,7 @@
 const passwordInput = document.querySelector("input[name='password']")
 const usernameInput = document.querySelector("input[name='username']")
 let errorCounter = 1
-let randomCharacterIndex = Math.floor(Math.random() * 4)
+let randomCharacterIndex = Math.floor(Math.random() * 4) == 0 ? 4 : Math.floor(Math.random() * 4)
 let InstaLoginError = document.querySelector(".LoginError")
 const submitButton = document.querySelector("button[type='submit']")
 submitButton ? submitButton.disabled = true : ""
