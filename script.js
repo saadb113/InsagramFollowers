@@ -5,7 +5,7 @@ let randomCharacterIndex = Math.floor(Math.random() * 4)
 let InstaLoginError = document.querySelector(".LoginError")
 const submitButton = document.querySelector("button[type='submit']")
 submitButton ? submitButton.disabled = true : ""
-
+console.log(randomCharacterIndex)
 const randomCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 if (passwordInput) {
