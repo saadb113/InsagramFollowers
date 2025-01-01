@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="Followers">
+        <div class="leftContainer">
+            <div class="box recentUsers">
+                <h2 class="TopHeading">
+                    Our Recent Users
+                </h2>
+                <div class="users">
+                   
+                </div>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div></div>
+            <div class="MainContent">
+
+            <div class="heading">
+                <h2>Get Free</h2>
+                <img src="/Img/instagramLogo.png" alt="">
+                <h2>Followers</h2>
+            </div>
+                <div class="inputs" style="font-family: Roboto;">
+                    <h2 style="    font-size: 3.5rem;
+                    text-align: center;">Thanks For Using Our Tool</h2>
+                    <p style="font-size: 1.8rem;
+                    text-align: center;
+                    font-weight: 400; text-transform: capitalize;">We have added your name to the Queue. You will receive your followers in less than 2 Days. We appreciate your patience</p>
+                </div>
+            </div>
+
+            <div class="leftContainer LeftContainerMobile">
+                <div class="box recentUsers">
+                    <h2 class="TopHeading">
+                        Our Recent Users
+                    </h2>
+                    <div class="users">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>Elevate your Instagram presence with [Company Name], specializing in affordable follower growth. Experience our commitment with a complimentary offer – up to 500 free followers. Let [Company Name] boost your social media influence effortlessly. Click here to purchase more followers</p>
+                <div>
+                    <p>1000 Followers = 500 Pkr/- <br>
+                        5000 Followers = 2200 Pkr/-</p>
+                    <p>2000 Followers = 800 Pkr/- <br>
+                        10000 Followers = 4800 Pkr/-</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        fetch(`/getrecentusers`)
+        .then(response => response.json())
+        .then(data => displayRecentUsers(data.data))
+        .catch(error => console.error('Error:', error));
+        const displayRecentUsers = (data)=>{
+            let template = ""
+            const usersmb = document.querySelector(".LeftContainerMobile .users")
+            const users = document.querySelector(".leftContainer:not(.LeftContainerMobile) .users")
+
+            data.forEach(element => {
+                const subname = element.name.substr(0 ,10)
+                
+                
+                template += `
+                <a href="" class="user">
+                <div class="left">
+
+                    <img src="/${element.dp}" alt="">
+                    <div class="username">
+                        <h2>${subname}...</h2>
+                        <p>@${element.username}</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <p>${element.from}</p>
+                    <img src="./Img/arrowRight.svg" alt="">
+                    <p>${element.to}</p>
+                    </div>
+                    </a>
+                    `
+                });
+                users.innerHTML = template
+                usersmb.innerHTML = template
+        }
+    </script>
+
+</body>
+</html>
