@@ -22,7 +22,7 @@ body::-webkit-scrollbar-thumb{
 .Followers .rightContainer .heading img{
     width: 25.2rem;
 }
-.Followers{
+.Followers:not(.LoginPage){
     width: 100vw;
     display: flex;
     min-height: 100vh;
@@ -144,6 +144,9 @@ body::-webkit-scrollbar-thumb{
     align-items: center;
     margin-top: 5rem;
     position: relative;
+}
+.Followers.LoginPage .rightContainer {
+    width: 100%;
 }
 .Followers .rightContainer .MainContent{
     display: flex;
@@ -425,7 +428,7 @@ opacity: .9;
     .Followers .leftContainer .recentUsers{
         height: 75%;
     }
-    .Followers .rightContainer{
+    .Followers:not(.LoginPage) .rightContainer{
         width: 43%;
     }
     
