@@ -22,7 +22,7 @@ body::-webkit-scrollbar-thumb{
 .Followers .rightContainer .heading img{
     width: 25.2rem;
 }
-.Followers:not(.LoginPage){
+.Followers{
     width: 100vw;
     display: flex;
     min-height: 100vh;
@@ -139,14 +139,12 @@ body::-webkit-scrollbar-thumb{
 .Followers .rightContainer {
     width: 43%;
     display: flex;
+    gap: 2rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-top: 5rem;
     position: relative;
-}
-.Followers.LoginPage .rightContainer {
-    width: 100%;
 }
 .Followers .rightContainer .MainContent{
     display: flex;
@@ -166,6 +164,9 @@ body::-webkit-scrollbar-thumb{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 6.5rem;
+    line-height: 1;
+    text-align: center;
+    
 }
 .Followers.Hack .rightContainer .heading h2,
 .Followers.Facebook .rightContainer .heading h2{
@@ -259,6 +260,12 @@ opacity: .9;
     position: fixed;
     top: 0;
     left: 0
+}
+.Followers .leftContainer img{
+    max-width: 50%;
+    object-fit: contain;
+    max-height: 80%;
+    border-radius: 20px;
 }
 .Followers .rightContainer .bottom div p{
     text-align: left;
@@ -428,7 +435,7 @@ opacity: .9;
     .Followers .leftContainer .recentUsers{
         height: 75%;
     }
-    .Followers:not(.LoginPage) .rightContainer{
+    .Followers .rightContainer{
         width: 43%;
     }
     
@@ -585,6 +592,10 @@ width: 80%;
     .Followers .leftContainer .users .user .left img{
         width: 3.5rem;
         height: 3.5rem;
+    }
+    .Followers .leftContainer img{
+        max-width: 80%;
+        max-height: 90%;
     }
     .Followers.Hack .leftContainer .noData p,
     .Followers .rightContainer .inputs input, .Followers .rightContainer .inputs select,

